@@ -12,6 +12,13 @@ public class Dealer extends CardPlayer {
 		deck.shuffle();
 	}
 
+	//THIS METHOD WAS ADDED FOR TESTING PURPOSES ONLY
+	//IN PRODUCTION, DEALER'S DECK INSTANCE SHOULD NOT BE MADE AVAILABLE TO OTHERS
+	public Deck getDeck() {
+		return deck;
+	}
+
+
 	public void play() {
 		System.out.println(getPlayerID() + " is playing");
 	}

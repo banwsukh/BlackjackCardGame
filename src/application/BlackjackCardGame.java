@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class BlackjackCardGame extends Game {
 
 	private final Dealer dealer = new Dealer("Dealer");
-	
+
 	public BlackjackCardGame(String givenName) {
 		super(givenName);
 	}
@@ -59,6 +59,23 @@ public class BlackjackCardGame extends Game {
 				System.out.printf("%s lost!\n\n", p.getPlayerID());
 			}
 		}
+	}
+
+	//THIS IS AN UNNECCESSARY METHOD MADE FOR TEST PURPOSES ONLY
+	//DETERMINES IF THE PASSED PLAYER P HAS WON. 	
+	//CODE MOSTLY BURROWED FROM declareWinner() method
+	public boolean didIWin(Player p, Dealer d) {
+
+		if (((CardPlayer) p).isBust()) {
+			return false;
+		} 
+		if (d.isBust()) {
+			return true;
+		} 
+		if (((CardPlayer) p).getTotal() > d.getTotal()) {
+			return true;
+		}
+		return false;
 	}
 
 	private void dealerTurn() {

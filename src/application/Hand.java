@@ -34,6 +34,11 @@ public class Hand extends GroupOfCards {
 		return total;
 	}
 
+	//THIS METHOD WAS INCLUDED FOR TESTING PURPOSES ONLY
+	public void setTotal(int t) {
+		total = t;
+	}
+
 	public void clearHand() {
 		cards.clear();
 		this.setSize(0);
